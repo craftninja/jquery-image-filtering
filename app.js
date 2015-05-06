@@ -10,10 +10,12 @@ $(document).ready(function() {
   	$( 'body' ).css( "background", "#000 url(img/forest.jpg) repeat" );
   	$( 'body' ).css( "background-size", "cover" );
 	});
-	$( ".low" ).on( "click", function() {
+	$( ".low" ).on( "click", function(event) {
+		event.preventDefault();
 		$( ".image-container" ).html($( ".home" ).sort(priceAscending));
 	});
-	$( ".high" ).on( "click", function() {
+	$( ".high" ).on( "click", function(event) {
+		event.preventDefault();
 		$( ".image-container" ).html($( ".home" ).sort(priceDescending));
 	});
 
