@@ -10,5 +10,18 @@ $(document).ready(function() {
   	$( 'body' ).css( "background", "#000 url(img/forest.jpg) repeat" );
   	$( 'body' ).css( "background-size", "cover" );
 	});
+	$( ".low" ).on( "click", function() {
+		$( ".image-container" ).html($( ".home" ).sort(priceAscending));
+	});
+	$( ".high" ).on( "click", function() {
+		$( ".image-container" ).html($( ".home" ).sort(priceDescending));
+	});
+
+  function priceAscending(a, b) {
+    return ($(b).data("price")) < ($(a).data("price")) ? 1 : -1;
+  }
+  function priceDescending(a, b) {
+    return ($(b).data("price")) > ($(a).data("price")) ? 1 : -1;
+  }
 
 })
